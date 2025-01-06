@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <style>
+            #car { 
+                position: relative; 
+                }
+                button{
+                    width:150px;
+                    height:40px;
+                    font-family:cursive ;
+                    font-size: 25px;
+                    margin: 5px;  
+                }
+                .btn{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                button:hover{
+                    background: linear-gradient(orange,white);
+                    box-shadow: 5px 5px 5px;
+                }
+
+        </style>
+    </head>
+    <body>
+      
+        <img src="e:\samingora\pics\vector-illustration-dirt-road-truck-with-fire-design_15206-541.avif"id="car" >
+   <br>
+   <div class="btn">
+        <button id="start">start</button>
+        <button id="reverse">reverse</button>
+        <button id="stop">stop</button>
+    </div>
+    </body>
+    <script>
+      $(document).ready(function(){
+       
+        $("#start").click(function(){
+             $('#car').animate({ left: '+=800px' }, 'slow');
+        });
+        $("#stop").click(function(){
+             $('#car').stop();
+        });
+        $("#reverse").click(function(){
+             $('#car').animate({ left: '-=800px' }, 'slow');
+        });
+
+        });
+
+      
+
+
+    </script>
+</html>
