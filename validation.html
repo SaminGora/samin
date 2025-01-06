@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validation()
+    {
+        var email=document.getElementById("email").value;
+        var tel=document.getElementById("phone").value;
+        var pass=document.getElementById("pass").value;
+        var name=document.getElementById("fname").value;
+        var pattern1 = /[A-Z]/;
+        var pattern2=/([a-z])/;
+        var pattern3=/([0-9])/;
+        var pattern4=/([\W_])/;
+         var patemail=/^[\w\-\.\+]+@(gmail\.com|hotmail\.com|yahoo\.com)$/i;
+         var pattel=/^(9841|9851|980|9861)\d{6}$/;
+        if(name==""|email==""|pass==""|tel=="")
+        {
+        alert("should be filled");
+      return false;
+        }
+       
+       //PASSWORD
+       
+        else if(pass.length<6){
+        alert("password must be 6 letter");
+        return false;
+        }
+         else   if(!pattern1.test(pass)){
+             alert("password must contain capital letter");
+            return false;}
+      else  if(!pattern2.test(pass)){
+            alert("must contain small letter");
+        return false;}
+      else  if(!pattern3.test(pass)){
+            alert("must contain digit");
+        return false;}
+           
+       else if(!pattern4.test(pass)){
+            alert("must contain special symbol");
+        return false;}
+        
+        
+      //email
+           
+           
+       else if(!patemail.test(email)){
+            alert("invalid email")
+        return false;
+    }
+        
+        //phone
+       
+       
+    else if(!pattel.test(tel)){
+        
+        alert("only accept ntc and ncell")
+return false;
+    }
+}
+ 
+    
+    
+  
+    
+    </script>
+</head>
+<body>
+    <form method="get" name="myform" onsubmit="return validation()">
+        <label for="fname">Full Name</label>
+        <input type="text" id="fname"><br>
+        <label>Phone</label>
+        <input type="tel" id="phone"><br>
+        <label>Email</label>
+        <input type="email" id="email"><br>
+        <label>password</label>
+        <input type="password" id="pass"><br>
+        <!-- <label>confirm password</label>
+        <input type="Password" id="conpass"><br> -->
+        <br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+    </form>
+</body>
+</html>
